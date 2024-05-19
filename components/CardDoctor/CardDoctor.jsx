@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const CardDoctor = (props) => {
+const Cardsalara_1 = (props) => {
     // const [boolean, setBoolean] = useState(true);
     const navigation = useNavigation()
     const prosp = props?.state?.item
@@ -29,22 +29,22 @@ const CardDoctor = (props) => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.CardDoctor}>
-                <View style={styles.CardDoctor_left}>
-                    <View style={styles.CardDoctor_left_imguser}>
+            <View style={styles.Cardsalara_1}>
+                <View style={styles.Cardsalara_1_left}>
+                    <View style={styles.Cardsalara_1_left_imguser}>
                         <Image style={{ width: 65, height: 65, borderRadius: 50 }} source={prosp ? { uri: prosp.img } : require("../../assets/Drimg.png")} />
-                        <Dot focused={prosp && prosp.BooleanDoctor} />
+                        <Dot focused={prosp && prosp.Booleansalara_1} />
                     </View>
-                    <View style={styles.CardDoctor_left_star}>
+                    <View style={styles.Cardsalara_1_left_star}>
                         <Image style={{ width: 20, height: 20 }} source={require('../../assets/Star.png')} />
                         <Text style={styles.ratingText}>{prosp && prosp.level}</Text>
                     </View>
                 </View>
-                <View style={styles.CardDoctor_right}>
-                    <Text style={styles.CardDoctor_right_doctorName}>{prosp ? prosp.name : 'Muhammad Doc'}</Text>
-                    <Text style={styles.CardDoctor_right_doctorInfo}>{prosp && prosp.Address}</Text>
-                    <TouchableOpacity style={styles.CardDoctor_right_button} onPress={() => { handleButtonClick(props ? prosp.id : 1) }}>
-                        <Text style={styles.CardDoctor_right_buttonText}>Uchrashuv</Text>
+                <View style={styles.Cardsalara_1_right}>
+                    <Text style={styles.Cardsalara_1_right_salara_1Name}>{prosp ? prosp.name : 'Muhammad Doc'}</Text>
+                    <Text style={styles.Cardsalara_1_right_salara_1Info}>{prosp && prosp.Address}</Text>
+                    <TouchableOpacity style={styles.Cardsalara_1_right_button} onPress={() => { handleButtonClick(props ? prosp.id : 1) }}>
+                        <Text style={styles.Cardsalara_1_right_buttonText}>Uchrashuv</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         paddingRight: 20,
     },
-    CardDoctor: {
+    Cardsalara_1: {
         height: 120,
         flexDirection: 'row',
         alignItems: 'center',
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: 'rgba(247, 248, 248, 1)',
     },
-    CardDoctor_left: {
+    Cardsalara_1_left: {
         width: 70,
         height: 90,
         flexDirection: 'row',
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flexWrap: 'wrap',
     },
-    CardDoctor_left_imguser: {
+    Cardsalara_1_left_imguser: {
         width: 65,
         height: 65,
         borderRadius: 30,
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    CardDoctor_left_star: {
+    Cardsalara_1_left_star: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
@@ -105,13 +105,13 @@ const styles = StyleSheet.create({
         textAlign: 'left',
         color: "rgba(8, 12, 47, 0.65)"
     },
-    CardDoctor_right: {
+    Cardsalara_1_right: {
         width: 230,
         flexDirection: 'row',
         flexWrap: 'wrap',
         marginLeft: 15,
     },
-    CardDoctor_right_doctorName: {
+    Cardsalara_1_right_salara_1Name: {
         fontFamily: 'Poppins',
         fontSize: 18,
         fontWeight: '500',
@@ -119,14 +119,14 @@ const styles = StyleSheet.create({
         textAlign: 'left',
         color: "rgba(8, 12, 47, 0.65)"
     },
-    CardDoctor_right_doctorInfo: {
+    Cardsalara_1_right_salara_1Info: {
         fontFamily: 'Poppins',
         fontSize: 15,
         fontWeight: '500',
         letterSpacing: 0.02,
         color: "rgba(125, 139, 183, 1)"
     },
-    CardDoctor_right_button: {
+    Cardsalara_1_right_button: {
         backgroundColor: '#F7F8F8',
         borderRadius: 10,
         height: 30,
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginVertical: 10,
     },
-    CardDoctor_right_buttonText: {
+    Cardsalara_1_right_buttonText: {
         height: 40,
         fontFamily: 'Poppins',
         fontSize: 14,
@@ -149,4 +149,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default CardDoctor;
+export default Cardsalara_1;

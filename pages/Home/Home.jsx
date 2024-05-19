@@ -33,6 +33,14 @@ const Home = () => {
     const handleSearchChange = (text) => {
         setSearchText(text);
         setShowClearIcon(text.length > 0); // Show clear icon if text length is greater than 0
+        CardDoctorApi.getCardDoctor()
+            .then(res => {
+                let filteredData = res.filter(item => item.name.toLowerCase().includes(text.toLowerCase()) && ["Pediatrlar", "Nefrolog", "Pulmonolog", "Endokrinolog"].includes(item.yolanish) && item.BooleanDoctor === true);
+                setData(filteredData);
+            })
+            .catch(error => {
+                console.error('Error fetching hospital data: ', error);
+            });
     };
 
     const handleClearText = () => {
@@ -55,7 +63,7 @@ const Home = () => {
     return (
         <View style={styles.HomeScreen}>
             <Animated.View style={[styles.header, {
-                height: scrollY > 2 ? 120 : 310
+                height: scrollY > 2 ? 130 : 310
             }]}>
                 <View style={styles.container}>
                     <View style={{ ...styles.header_user, zIndex: 1 }}>
@@ -70,7 +78,7 @@ const Home = () => {
                             />
                         </TouchableOpacity>
                     </View>
-                    <View style={{ ...styles.header_textvsinput, marginTop: scrollY > 0 ? -150 : 10 }}>
+                    <View style={{ ...styles.header_textvsinput, marginTop: scrollY > 0 ? "-45%" : 10 }}>
                         <View style={{ zIndex: -1 }}>
                             <Text style={styles.header_textvsinput_text}>Qaytib kelganingizdan xursandmiz</Text>
                             <Text style={styles.header_textvsinput_title}>Topamiz {"\n"}Sizning eng yaxshi Shifokoringiz!</Text>

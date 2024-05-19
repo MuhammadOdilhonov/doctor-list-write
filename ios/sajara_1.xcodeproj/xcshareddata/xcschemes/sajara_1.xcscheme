@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "sajara_1.app"
-               BlueprintName = "sajara_1"
-               ReferencedContainer = "container:sajara_1.xcodeproj">
+               BuildableName = "Doctor.app"
+               BlueprintName = "Doctor"
+               ReferencedContainer = "container:Doctor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "sajara_1Tests.xctest"
-               BlueprintName = "sajara_1Tests"
-               ReferencedContainer = "container:sajara_1.xcodeproj">
+               BuildableName = "DoctorTests.xctest"
+               BlueprintName = "DoctorTests"
+               ReferencedContainer = "container:Doctor.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "sajara_1.app"
-            BlueprintName = "sajara_1"
-            ReferencedContainer = "container:sajara_1.xcodeproj">
+            BuildableName = "Doctor.app"
+            BlueprintName = "Doctor"
+            ReferencedContainer = "container:Doctor.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "sajara_1.app"
-            BlueprintName = "sajara_1"
-            ReferencedContainer = "container:sajara_1.xcodeproj">
+            BuildableName = "Doctor.app"
+            BlueprintName = "Doctor"
+            ReferencedContainer = "container:Doctor.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

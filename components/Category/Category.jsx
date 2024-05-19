@@ -7,7 +7,7 @@ const Category = () => {
     const dataCard = [
         {
             id: 1,
-            img: 'https://png.pngtree.com/png-clipart/20201224/ourmid/pngtree-original-doctor-icon-vector-material-png-image_2607465.jpg',
+            img: 'https://png.pngtree.com/png-clipart/20201224/ourmid/pngtree-original-Doctor-icon-vector-material-png-image_2607465.jpg',
             title: 'Hammasi'
         },
         {
@@ -140,7 +140,7 @@ const Category = () => {
                                 ))}
                             </>
                             :
-                            <View><Text style={{ textAlign: "center", fontSize: 22, color: "red" }}>Malumot yoq</Text></View>
+                            <View><Text style={{ textAlign: "center", fontSize: 22, color: "blue" }}>Malumot yoq</Text></View>
                     }
                 </ScrollView>
             </View>

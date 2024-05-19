@@ -9,6 +9,7 @@ import ALongTime from '../../components/ALongTime/ALongTime';
 import TopDoctors from '../../components/TopDoctors/TopDoctors';
 import HospitalTotal from '../../components/HospitalTotal/HospitalTotal';
 import Category from '../../components/Category/Category';
+import DownloadInformation from '../../components/DownloadInformation/DownloadInformation'
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -40,6 +41,11 @@ const HospitalTotalStack = () => (
 const CategoryStack = () => (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="CategoryScreen" component={Category} />
+    </Stack.Navigator>
+);
+const DownloadInformationStack = () => (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="DownloadInformationScreen" component={DownloadInformation} />
     </Stack.Navigator>
 );
 
@@ -152,6 +158,21 @@ const MainTabNavigator = () => {
                             <View style={{ flexWrap: "wrap", alignItems: "center" }}>
                                 <Image
                                     source={require('../../assets/totalImg.png')}
+                                    style={{ width: 35, height: 35, tintColor: color }}
+                                />
+                                <Dot focused={focused} />
+                            </View>
+                        ),
+                    }}
+                />
+                <Tab.Screen
+                    name="DownloadInformation"
+                    component={DownloadInformationStack}
+                    options={{
+                        tabBarIcon: ({ color, size, focused }) => (
+                            <View style={{ flexWrap: "wrap", alignItems: "center" }}>
+                                <Image
+                                    source={require('../../assets/download_section.png')}
                                     style={{ width: 35, height: 35, tintColor: color }}
                                 />
                                 <Dot focused={focused} />

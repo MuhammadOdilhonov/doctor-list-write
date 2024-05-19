@@ -1,4 +1,4 @@
-package com.doctor
+package com.Doctor
 
 import android.app.Application
 import com.facebook.react.PackageList

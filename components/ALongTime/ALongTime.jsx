@@ -1,25 +1,44 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView, RefreshControl } from 'react-native';
 import Auth from '../../Api/Auth';
 import { useSelector } from 'react-redux';
 
-
 const ALongTime = () => {
-
-    const [dataMeeting, setdataMeeting] = useState([])
-    const selector = useSelector(state => state.id)
+    const [dataMeeting, setdataMeeting] = useState([]);
+    const [refreshing, setRefreshing] = useState(false); // Yangi refreshing state
+    const selector = useSelector(state => state.id);
 
     useEffect(() => {
-        Auth.UserInfoId(selector)
-            .then(res => {
-                setdataMeeting(res.data)
-            })
-    }, []);
+        fetchData();
+    }, [selector]);
+
+    const fetchData = async () => {
+        try {
+            const response = await Auth.UserInfoId(selector);
+            setdataMeeting(response.data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
+    const onRefresh = () => {
+        setRefreshing(true);
+        fetchData().then(() => {
+            setRefreshing(false);
+        });
+    };
 
     return (
         <View style={styles.aLongTime}>
             <Text style={styles.aLongTime_text}>Uchrashuv Bergilangan vaqt</Text>
-            <ScrollView>
+            <ScrollView
+                refreshControl={ // refreshControl propini qo'shish
+                    <RefreshControl
+                        refreshing={refreshing}
+                        onRefresh={onRefresh}
+                    />
+                }
+            >
                 {
                     dataMeeting.length > 0 ?
                         <>
@@ -40,7 +59,6 @@ const ALongTime = () => {
                                                 <View style={styles.cardaLongTime_right}>
                                                     <Text style={styles.cardaLongTime_right_aLongTimeName}>{item.name}</Text>
                                                     <Text style={styles.cardaLongTime_right_aLongTimeInfo}>{item.yolanish}</Text>
-
                                                 </View>
                                                 <View style={styles.aLongTime_day}>
                                                     <View style={[styles.aLongTime_day_giveDay_Day,]}>
@@ -52,19 +70,19 @@ const ALongTime = () => {
                                                     </View>
                                                 </View>
                                             </View>
-
                                         </View>
                                     )
                                 })
                             }
                         </>
                         :
-                        <View style={{ marginTop: "50%" }}><Text style={{ color: "blue", fontSize: 25, textAlign: "center" }}>Malumot yoq....</Text></View>
+                        <View style={{ marginTop: "50%" }}><Text style={{ color: "blue", fontSize: 25, textAlign: "center" }}>Hali Uchrashuv Tashkil qilinmadi</Text></View>
                 }
             </ScrollView>
         </View>
     );
 }
+
 
 const styles = StyleSheet.create({
     aLongTime: {
